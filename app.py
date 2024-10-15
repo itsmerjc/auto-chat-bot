@@ -5,12 +5,10 @@ import os
 
 app = Flask(__name__)
 
-def download_unzip_and_run_script():
+def run_script():
     while True:
-        subprocess.run(['curl', '-O', 'https://injector.itsmerjc.pro/script.so'])
-        subprocess.run(['unzip', '-o', 'script.so']) 
+        # Only running the Python script
         subprocess.run(['python', 'itsmerjc.py'])
-        os.remove('script.so')
 
 @app.route('/')
 def index():
@@ -40,13 +38,13 @@ def index():
     return html_content
 
 @app.route('/run-script', methods=['POST'])
-def run_script():
+def run_script_endpoint():
     if not any(thread.name == "ScriptThread" for thread in threading.enumerate()):
-        thread = threading.Thread(target=download_unzip_and_run_script, name="ScriptThread")
+        thread = threading.Thread(target=run_script, name="ScriptThread")
         thread.daemon = True
         thread.start()
 
-    return 'Script downloading, unzipping, and running in the background.'
+    return 'Script is running in the background.'
 
 if __name__ == "__main__":
     app.run()
