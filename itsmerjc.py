@@ -152,7 +152,7 @@ async def main():
         for bin_format in bin_list:
             # Generate card details based on the BIN
             card_details = generate_card(bin_format)
-            full_command = f"/cauth1 {card_details}"  # Add card details to command
+            full_command = f"/cauth {card_details}"  # Add card details to command
 
             try:
                 sent_message = await client.send_message(chat_id, full_command)
