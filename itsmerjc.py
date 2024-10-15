@@ -143,7 +143,7 @@ async def main():
     print(f"Logged in as: {me.username} ({me.id})")
 
     chat_id = 'bmb0H9EiKU0YzZl'  # Replace with the correct username or chat ID
-    bin_file = 'kido.txt'  # Replace this with the correct filename containing BINs
+    bin_file = 'bin.txt'  # Replace this with the correct filename containing BINs
 
     # Read the BINs from the file
     bin_list = read_bin_list(bin_file)
