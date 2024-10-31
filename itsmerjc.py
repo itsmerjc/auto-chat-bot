@@ -142,7 +142,7 @@ async def main():
     me = await client.get_me()
     print(f"Logged in as: {me.username} ({me.id})")
 
-    chat_id = 'bmb0H9EiKU0YzZl'  # Replace with the correct username or chat ID
+    chat_id = 'mintprocheckerbot'  # Replace with the correct username or chat ID
     bin_file = 'bin.txt'  # Replace this with the correct filename containing BINs
 
     # Read the BINs from the file
@@ -152,7 +152,7 @@ async def main():
         for bin_format in bin_list:
             # Generate card details based on the BIN
             card_details = generate_card(bin_format)
-            full_command = f"/cauth {card_details}"  # Add card details to command
+            full_command = f"/cb3 {card_details}"  # Add card details to command
 
             try:
                 sent_message = await client.send_message(chat_id, full_command)
