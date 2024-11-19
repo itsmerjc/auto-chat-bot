@@ -32,8 +32,8 @@ def Tele(ccx):
 	pm = r1.json()['id']
 
 	cookies = {
-			'__stripe_mid': 'stripe_mid=bc1c1a60-d0ea-4a4d-92ba-10c51782763484a40f',
-			'__stripe_sid': 'stripe_sid=828442a6-31b9-4196-8f26-6afaaf7844f2debb6c',
+			'__stripe_mid': 'stripe_mid=b644482a-f109-4de9-95d5-c07b01167f1281c281',
+			'__stripe_sid': 'stripe_sid=11151dee-e062-48e4-9858-b4ebcf0b4d58488d91',
 	}
 
 	headers = {
