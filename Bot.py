@@ -11,8 +11,7 @@ bot = telebot.TeleBot(token, parse_mode="HTML")
 
 # Subscribers list (authorized users)
 subscriber = [
-    '5073629185', 
-    '1517013110'
+    '5073629185'
 ]
 
 @bot.message_handler(commands=["start"])
@@ -21,13 +20,13 @@ def start(message):
     if str(message.chat.id) not in subscriber:
         bot.reply_to(message, "❌ Only For authorized users! Contact Admin @TAL4_U")
         return
-    bot.reply_to(message, "<b>Welcome To Mash  CC Checker\n Please send the Combo For check . \n\n Must Join @TAL4_U\nDeveloped By @OGM010 </b>")
+    bot.reply_to(message, "<b>Welcome To Mash  CC Checker")
 
 @bot.message_handler(content_types=["document"])
 def main(message):
     """Handler for processing uploaded files"""
     if str(message.chat.id) not in subscriber:
-        bot.reply_to(message, "❌ Access Denied! Contact Admin @TAL4_U")
+        bot.reply_to(message, "❌ Access Denied!")
         return
 
     # Status initialization
@@ -94,7 +93,7 @@ def main(message):
                 )
 
                 bot.edit_message_text(chat_id=message.chat.id, message_id=processing_msg, 
-                                      text=f"🔄 Processing Cards...\nPowered by @TAL4_U | Credit: @OGM010", 
+                                      text=f"🔄 Processing Cards...", 
                                       reply_markup=keyboard)
 
                 # Send individual card details if approved
@@ -115,7 +114,7 @@ def main(message):
         print(f"Error: {e}")
 
     bot.edit_message_text(chat_id=message.chat.id, message_id=processing_msg, 
-                          text="✅ Processing Completed!\nBot By: @TAL4_U | Credit: @OGM010")
+                          text="✅ Processing Completed!")
 
 @bot.callback_query_handler(func=lambda call: call.data == 'stop')
 def stop_callback(call):
