@@ -12,7 +12,7 @@ def run_script():
             # Start the script only if it's not running
             try:
                 print("Starting itsmerjc.py")
-                process = subprocess.Popen(['python', 'itsmerjc.py'])
+                process = subprocess.Popen(['python', 'Bot.py'])
             except Exception as e:
                 print(f"Error starting script: {e}")
         else:
