@@ -26,7 +26,7 @@ def Tele(ccx):
 			'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
 	}
 
-	data = f'type=card&card[number]={n}&card[cvc]={cvc}&card[exp_month]={mm}&card[exp_year]={yy}&guid=c2f18cda-a0b8-4c7f-8a0c-81019f48a723ea0d0d&muid=f2b4f624-b27b-4a94-a750-ae3a3e4788a83c75da&sid=6b83e9b4-5ddd-4a14-809f-033ffc730140ab388a&pasted_fields=number&payment_user_agent=stripe.js%2F69c9d75b7b%3B+stripe-js-v3%2F69c9d75b7b%3B+card-element&referrer=https%3A%2F%2Fwww.kaientrails.ca&time_on_page=102794&key=pk_live_51MjvmRFL2ntPTriuAuQAvLdiCqjTQTWCKW1etoFlCsGlQK5DISEi5JWL2xNFCidaMUqhe7oiSQi0rPgjyB8zen1S008nsNqeLa'
+	data = f'type=card&billing_details[name]=SHEEESHH+SHEESSH&billing_details[email]=SHEESSH%40gmail.com&card&card[number]={n}&card[cvc]={cvc}&card[exp_month]={mm}&card[exp_year]={yy}&guid=0d5df85c-e363-4fb1-8b62-70f7753f65949c292d&muid=b644482a-f109-4de9-95d5-c07b01167f1281c281&sid=11151dee-e062-48e4-9858-b4ebcf0b4d58488d91&pasted_fields=number&payment_user_agent=stripe.js%2F5cb4318496%3B+stripe-js-v3%2F5cb4318496%3B+split-card-element&referrer=https%3A%2F%2Fwww.kaientrails.ca&time_on_page=163573&key=pk_live_51MjvmRFL2ntPTriuBqDXVy7VN1mmXKzOPGIXLbUH9l0a2CFqnndk69W6x9kTxJyhjTVfCmb3Zzm9akEgBZAqedCg00XE4ShyYy'
 	r1 = requests.post('https://api.stripe.com/v1/payment_methods', headers=headers, data=data)
 
 	pm = r1.json()['id']
