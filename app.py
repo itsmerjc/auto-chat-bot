@@ -5,29 +5,33 @@ import time
 
 app = Flask(__name__)
 
+# Function to monitor and ensure Bot.py is running
 def run_script():
     process = None
     while True:
         if process is None or process.poll() is not None:
-            # Start the script only if it's not running
+            # Start Bot.py only if not running
             try:
-                print("Starting itsmerjc.py")
+                print("Starting Bot.py...")
                 process = subprocess.Popen(['python', 'Bot.py'])
             except Exception as e:
-                print(f"Error starting script: {e}")
+                print(f"Error starting Bot.py: {e}")
         else:
-            print("itsmerjc.py is still running...")
+            print("Bot.py is still running...")
 
-        # Sleep interval before checking again
-        time.sleep(5)  # Adjust sleep time as needed
+        time.sleep(5)  # Check every 5 seconds
 
-# Automatically start the script when the app starts
+# Function to start the monitoring thread
 def start_script_thread():
     if not any(thread.name == "ScriptThread" for thread in threading.enumerate()):
-        thread = threading.Thread(target=run_script, name="ScriptThread")
-        thread.daemon = True  # Daemon threads exit when the main program exits
+        thread = threading.Thread(target=run_script, name="ScriptThread", daemon=True)
         thread.start()
 
+# Flask route for testing
+@app.route("/")
+def home():
+    return "Flask app is running. Bot.py is monitored in the background."
+
 if __name__ == "__main__":
-    start_script_thread()  # Start the script as soon as the server starts
-    app.run()
+    start_script_thread()  # Start Bot.py monitoring thread
+    app.run(debug=True)
