@@ -1,6 +1,6 @@
-import requests,re
+import requests
+
 def Tele(ccx):
-	import requests
 	ccx=ccx.strip()
 	n = ccx.split("|")[0]
 	mm = ccx.split("|")[1]
