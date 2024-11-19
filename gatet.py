@@ -41,7 +41,7 @@ def Tele(ccx):
 			'accept': '*/*',
 			'accept-language': 'en-US,en;q=0.9',
 			'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-			'cookie': '__stripe_mid=cd04496a-fc78-49f6-99fc-6310e3e55e6221dc47; __stripe_sid=b3b7888f-21a6-4ff7-a3cf-b0242d6fcf37cce97e',
+			# 'cookie': '__stripe_mid=cd04496a-fc78-49f6-99fc-6310e3e55e6221dc47; __stripe_sid=b3b7888f-21a6-4ff7-a3cf-b0242d6fcf37cce97e',
 			'origin': 'https://www.kaientrails.ca',
 			'referer': 'https://www.kaientrails.ca/membership-information/',
 			'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
